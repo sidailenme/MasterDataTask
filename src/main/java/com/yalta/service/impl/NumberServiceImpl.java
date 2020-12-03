@@ -13,7 +13,7 @@ public class NumberServiceImpl implements NumberService {
     @Override
     public Map<Integer, Integer> test(List<Integer> numbers) {
         Map<Integer, Integer> duplicate = new HashMap<>();
-        numbers.stream().filter(this::isSimple).forEach(x -> duplicate.merge(x, x, Integer::sum));
+        numbers.stream().filter(this::isSimple).forEach(x -> duplicate.merge(x, 1, Integer::sum));
         return duplicate;
     }
 
