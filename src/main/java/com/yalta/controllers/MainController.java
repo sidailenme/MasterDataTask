@@ -18,8 +18,7 @@ public class MainController {
     private final NumberService numberService;
 
     @PostMapping("/")
-    public ResponseEntity<Integer> takeList(@RequestBody List<Integer> numbers) {
-        ResponseEntity<Map<Integer,Integer>> response = new ResponseEntity<>(numberService.test(numbers), HttpStatus.OK);
-        return new ResponseEntity<>(HttpStatus.OK);
+    public ResponseEntity<Map<Integer, Integer>> takeList(@RequestBody List<Integer> numbers) {
+        return new ResponseEntity<>(numberService.test(numbers), HttpStatus.OK);
     }
 }
